@@ -1,15 +1,15 @@
 <?php
-session_start();
-if (isset($_SESSION['user'])) {
-    header("Location: index.php");
-    exit();
-}
+    session_start();
+    if (isset($_SESSION['user'])) {
+        header("Location: index.php");
+        exit();
+    }
 
-if (!isset($_SESSION['login_attempts'])) {
-    $_SESSION['login_attempts'] = 0;
-}
-$max_attempts = 5;
-$locked = $_SESSION['login_attempts'] >= $max_attempts;
+    if (!isset($_SESSION['login_attempts'])) {
+        $_SESSION['login_attempts'] = 0;
+    }
+    $max_attempts = 5;
+    $locked = $_SESSION['login_attempts'] >= $max_attempts;
 ?>
 <!DOCTYPE html>
 <html>
